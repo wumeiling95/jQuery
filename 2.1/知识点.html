@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.3.1.js"></script>
+</head>
+<body>
+<div class="div1" text-type="aaa">
+</div>
+<input type="checkbox" id="cb">
+<script>
+//    var $div = $(".div1").prop("text-type");
+//    console.log($div);
+
+    $("#cb").prop("checked",true);
+    $("#cb").attr("checked","checked");  //获取不到，反选需要用到遍历
+
+//    $("#cb").click(function () {
+//        var $div = $(this).prop("checked");
+//        console.log($div);
+//    })
+</script>
+</body>
+</html>

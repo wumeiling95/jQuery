@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.3.1.js"></script>
+    <style>
+        *{
+            color: #f60;
+        }
+    </style>
+    <!--<script>-->
+        <!--window.onload = function () {-->
+            <!--console.log($("p").length);-->
+        <!--}-->
+       <!--$(document).ready(function () {-->
+           <!--console.log("ready:"+$("p").length);-->
+       <!--})-->
+        <!--$(function () {-->
+            <!--console.log("简写："+$("p").length);-->
+        <!--})-->
+
+    <!--</script>-->
+</head>
+<body>
+<div id="box">
+    <div class="aa">
+        <div id="div1">ddd</div>
+        <p>1</p>
+        <p class="bb">2</p>
+        <p>3</p>
+        <p>4</p>
+    </div>
+</div>
+<script>
+
+
+
+//    $(function () {
+//        console.log("简写："+$("p").length);
+//    })
+    var $p = $("p");
+    var $child = $("#box div").html();
+    console.log($child);
+//    $(".dd").index();
+    console.log($(".dd").index());
+    $(".bb").click(function () {
+        console.log($(this).index());
+        $(this).addClass("active");
+    })
+    $(".bb").click(function () {
+        $(this).removeClass("active");
+        $(this).css("display","none");
+    })
+
+//    $("p").eq(1).css("color","yellow");
+//    var $aa = $(".aa");
+//    $aa.html("1111");
+//
+//    var oBox = document.getElementById("box");
+//    var $box = $("#box");
+//    console.log($box.get(0));
+//    console.log($box.html());
+//    console.log($(oBox).html());
+
+</script>
+</body>
+</html>
