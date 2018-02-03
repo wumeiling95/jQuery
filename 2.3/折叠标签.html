@@ -29,7 +29,7 @@
         #container .submenu ul{
             display: none;
         }
-        .active{
+        #container li .active{
             display:block;
         }
     </style>
@@ -38,7 +38,7 @@
 <ul id="container">
     <li class="submenu">
         <h3>管理区</h3>
-        <ul>
+        <ul class="active">
             <li>001</li>
             <li>002</li>
             <li>003</li>
@@ -53,46 +53,44 @@
         </ul>
     </li>
 </ul>
-</body>
 <script>
     $("h3").click(function () {
         $(this).siblings("ul").toggleClass("active");
     })
+    //    $oContainer = $("#container");
+    //    $h3 = $("h3");
+    //    $h3.eq(0).click(function () {
+    //        $("p:nth-child(3)").toggleClass("ee");
+    //        $h3.eq(0).siblings("ul").css("display","block");
+    //    })
+    //    $h3.eq(1).click(function () {
+    //        $h3.eq(1).siblings("ul").css("display","block");
+    //    })
 
-//    $oContainer = $("#container");
-//    $h3 = $("h3");
-//    $h3.eq(0).click(function () {
-//        $("p:nth-child(3)").toggleClass("ee");
-//        $h3.eq(0).siblings("ul").css("display","block");
-//    })
-//    $h3.eq(1).click(function () {
-//        $h3.eq(1).siblings("ul").css("display","block");
-//    })
 
+    //    var oContainer = document.getElementById("container");
+    //    var aH3 = document.getElementsByTagName("h3");
+    //    var aUl = oContainer.getElementsByTagName("ul");
 
-//    var oContainer = document.getElementById("container");
-//    var aH3 = document.getElementsByTagName("h3");
-//    var aUl = oContainer.getElementsByTagName("ul");
+    //    function next(obj) {
+    //        var nextNode = obj;
+    //        do {
+    //            nextNode = nextNode.nextSibling;
+    //        } while( nextNode && nextNode.nodeType!=1)
+    //        return nextNode;
+    //    }
 
-//    function next(obj) {
-//        var nextNode = obj;
-//        do {
-//            nextNode = nextNode.nextSibling;
-//        } while( nextNode && nextNode.nodeType!=1)
-//        return nextNode;
-//    }
-
-//    for(var i=0;i<aH3.length;i++){
-//        aH3[i].index = i;
-//        aH3[i].onclick = function () {
-//            var oUl = next(this);
-//            if(oUl.style.display == "block"){
-//                oUl.style.display = "none";
-//            }else{
-//                oUl.style.display = "block";
-//            }
-//        }
-//    }
+    //    for(var i=0;i<aH3.length;i++){
+    //        aH3[i].index = i;
+    //        aH3[i].onclick = function () {
+    //            var oUl = next(this);
+    //            if(oUl.style.display == "block"){
+    //                oUl.style.display = "none";
+    //            }else{
+    //                oUl.style.display = "block";
+    //            }
+    //        }
+    //    }
 
     //    var oContainer = document.getElementById("container");
     //    var aH3 = document.getElementsByTagName("h3");
@@ -118,4 +116,5 @@
     //    }
 
 </script>
+</body>
 </html>

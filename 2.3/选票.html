@@ -9,11 +9,6 @@
             padding:0;
             margin:0;
         }
-        .clearfix:after{
-            content:"";
-            clear: both;
-            display: block;
-        }
         ul{
             list-style-type: none;
         }
@@ -26,23 +21,31 @@
             margin:0 auto;
         }
         #container #head{
-            width: 582px;
-            height: 40px;
-            /*text-align: center;*/
+            width: 600px;
+            height: 80px;
+            line-height: 80px;
+            font-size: 20px;
             margin: 10px 0;
             background-color: white;
         }
         #container #head1 ul{
             width: 600px;
             height: 50px;
+            border-bottom: 1px solid #555555;
         }
         #container #head1 li{
-            width: 40px;
+            width: 100px;
             height: 30px;
             float: left;
             display: block;
             margin-right: 100px;
             color: white;
+        }
+        #container #head1 span{
+            float: left;
+            display: block;
+            margin-left: 5px;
+            line-height: 30px;
         }
         #container #head1 .seat1{
             display: block;
@@ -62,8 +65,8 @@
             width: 40px;
             height: 30px;
         }
-        #container .seat-bar ul:nth-child(5){
-            margin-right: 10px;
+        #container .seat-bar span:nth-child(6){
+            margin-left: 28px;
         }
         #container .seat-bar .seat{
             display: block;
@@ -75,37 +78,113 @@
             float: left;
         }
         #container #bottom ul{
-            width: 800px;
+            width: 600px;
             height: 100px;
+            position: relative;
+            top: 360px;
+            margin-top: 20px;
+            border-top: 1px solid #555555;
         }
         #container #bottom li{
             float: left;
             color:white;
-            margin-right: 200px;
-            position: relative;
+            /*margin-right: 5px;*/
+            position: absolute;
             left: 90px;
             margin-top: 10px;
         }
-        .red{
-            background-color: red;
+        #container #bottom #l{
+            top:0;
+            left: 50px;
+            font-size: 25px;
         }
-
+        #container #bottom #r{
+            top:0;
+            left: 350px;
+            font-size: 25px;
+        }
+        img{
+            text-align: center;
+            position: relative;
+            left: 130px;
+        }
+        .bot{
+            width: 600px;
+            position: fixed;
+            bottom: 0;
+        }.bot > div{
+             height: 100px;
+             line-height: 100px;
+             float: left;
+             font-size: 50px;
+         }
+        .bot .b-left{
+            padding-left: 45px;
+            width: 330px;
+            color: #b1b1b1;
+            background-color: #4a4c52;
+        }
+        .bot .b-left .money{
+            color: #cc3300;
+        }
+        .bot .b-left .sum{
+            font-size: 1rem;
+            margin-left: 20px;
+        }
+        .bot .b-right{
+            text-align: center;
+            color: #333;
+            width: 225px;
+            background-color: #c1a55f;
+        }
+        .s-bar ul li{
+            display: inline-block;
+            height: 3.5rem;
+            line-height: 3.5rem;
+            text-align: center;
+            width: 200px;
+            color:#cfa972;
+            font-size: 1.8rem;
+            border:1px solid #cfa972;
+            margin:0 0 30px 30px;
+        }
+        .empty{
+            background-color: white;!important;
+        }
+        .selected{
+            background-color: cornflowerblue;!important;
+        }
     </style>
 </head>
 <body>
 <div id="container">
     <div id="head">
-        今天是
+        今天是今天1月6日&nbsp;13:20
     </div>
     <div id="head1">
         <ul>
-            <li><span class="seat1"></span>已选</li>
-            <li><span class="seat2"></span>可选</li>
-            <li><span class="seat3"></span>已售</li>
+            <li><span class="seat1"></span><span class="text">可选</span></li>
+            <li><span class="seat2"></span><span class="text">已选</span></li>
+            <li><span class="seat3"></span><span class="text">已售</span></li>
         </ul>
+    </div>
+    <div>
+        <img src="image/1.png">
     </div>
     <div class="seat-bar">
         <ul>
+            <li>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+            </li>
             <li>
                 <span class="seat"></span>
                 <span class="seat"></span>
@@ -206,9 +285,20 @@
     </div>
     <div id="bottom">
         <ul>
-            <li>已选座位</li>
-            <li>最多可选择5个座位</li>
+            <li id="l">已选座位</li>
+            <li id="r">最多可选择5个座位</li>
         </ul>
+    </div>
+    <div class="foot">
+
+    </div>
+    <div class="bot">
+        <div class="b-left">
+            <span>合计：</span>
+            <span class="money" id="js-money">¥0</span>
+            <span class="sum" id="js-sum">¥99*0</span>
+        </div>
+        <div class="b-right">确认选座</div>
     </div>
 </div>
 <script>
@@ -218,13 +308,14 @@
             $seat.eq(i).css("background-color","cornflowerblue");
         }
     }
-    for(var j=0;j<$seat.length;j++){
-        $seat.eq(j).click(function () {
-            if(i%4!=0){
-                $seat.eq(i).css("background-color","red");
-            }
-        })
-    }
+
+//    for(var j=0;j<$seat.length;j++) {
+//        if (j % 4 == 0) {
+//            $seat.eq(j).click(function () {
+//                $seat.eq(j).toggleClass("empty");
+//            })
+//        }
+//    }
 </script>
 </body>
 </html>
