@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.3.1.js"></script>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        .clearfix:after{
+            content:"";
+            clear: both;
+            display: block;
+        }
+        ul{
+            list-style-type: none;
+        }
+        body{
+            background-color: black;
+        }
+        #container{
+            width: 600px;
+            height: 800px;
+            margin:0 auto;
+        }
+        #container #head{
+            width: 582px;
+            height: 40px;
+            /*text-align: center;*/
+            margin: 10px 0;
+            background-color: white;
+        }
+        #container #head1 ul{
+            width: 600px;
+            height: 50px;
+        }
+        #container #head1 li{
+            width: 40px;
+            height: 30px;
+            float: left;
+            display: block;
+            margin-right: 100px;
+            color: white;
+        }
+        #container #head1 .seat1{
+            display: block;
+            background-color: red;
+            width: 40px;
+            height: 30px;
+        }
+        #container #head1 .seat2{
+            display: block;
+            background-color: white;
+            width: 40px;
+            height: 30px;
+        }
+        #container #head1 .seat3{
+            display: block;
+            background-color: cornflowerblue;
+            width: 40px;
+            height: 30px;
+        }
+        #container .seat-bar ul:nth-child(5){
+            margin-right: 10px;
+        }
+        #container .seat-bar .seat{
+            display: block;
+            height: 30px;
+            width: 40px;
+            background-color: white;
+            margin: 5px 9px;
+            /*margin-right: 18px;*/
+            float: left;
+        }
+        #container #bottom ul{
+            width: 800px;
+            height: 100px;
+        }
+        #container #bottom li{
+            float: left;
+            color:white;
+            margin-right: 200px;
+            position: relative;
+            left: 90px;
+            margin-top: 10px;
+        }
+        .red{
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="head">
+        今天是
+    </div>
+    <div id="head1">
+        <ul>
+            <li><span class="seat1"></span>已选</li>
+            <li><span class="seat2"></span>可选</li>
+            <li><span class="seat3"></span>已售</li>
+        </ul>
+    </div>
+    <div class="seat-bar">
+        <ul>
+            <li>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+            </li>
+            <li>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+            </li>
+            <li>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+            </li>
+            <li>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+            </li>
+            <li>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+            </li>
+            <li>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+            </li>
+            <li>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+            </li>
+            <li>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+            </li>
+        </ul>
+    </div>
+    <div id="bottom">
+        <ul>
+            <li>已选座位</li>
+            <li>最多可选择5个座位</li>
+        </ul>
+    </div>
+</div>
+<script>
+    $seat = $(".seat");
+    for(var i=0;i<$seat.length;i++){
+        if(i%4==0){
+            $seat.eq(i).css("background-color","cornflowerblue");
+        }
+    }
+    for(var j=0;j<$seat.length;j++){
+        $seat.eq(j).click(function () {
+            if(i%4!=0){
+                $seat.eq(i).css("background-color","red");
+            }
+        })
+    }
+</script>
+</body>
+</html>
