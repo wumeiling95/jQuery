@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.3.1.js"></script>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        ul{
+            list-style-type: none;
+        }
+        li{
+            margin: 10px 10px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <input type="text" id="target">
+    <ul>
+        <li>iphone</li>
+        <li>phone</li>
+        <li>iphone8</li>
+        <li>photo</li>
+        <li>ipod</li>
+    </ul>
+</div>
+<script>
+    var $Target = $("#target");
+    $Target.keyup(function () {
+        var val = $(this).val();
+        $("li").css("background-color","none");
+        if(val!=""){
+            $("li:contains("+val+")").css("background-color","red");
+        }
+    })
+//    var $Target = $("#target");
+//    $Target.keyup(function () {
+//        var val = $Target.val();
+//        $("li:contains("+val+")").css("background-color","red");
+//    })
+    
+</script>
+</body>
+</html>

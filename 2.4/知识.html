@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.3.1.js"></script>
+</head>
+<body>
+<div>
+    <p>123</p>
+    <ul>
+        <li class="cc">1</li>
+        <li class="aa">2</li>
+        <li class="bb">3</li>
+        <li>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="div1">a
+    <div class="div2">b
+        <div class="3">c</div>
+    </div>
+</div>
+<script>
+//    $("li").filter(1).css("color","red");
+//    $("li").first(1).css("color","red");
+//    $("li").has("ul").css("color","red");  //只要li下有ul就选中
+//    console.log($("p").next().is("p")); //next下一个，is判断返回布尔型
+//    $("li").not(".aa").css("color","red");//除了aa
+//    $("li").slice(2).css("color","red");
+//    $("li").slice(1,3).css("color","red");//1-3，从1到3，不包括3
+//    $("li").add("p").css("color","red");//创建一个新的jquery到集合中
+//    console.log($("p").contents());  //返回的是对象，但是不能改变样式
+//    .each(index,elem);
+//    $(".div1").children("div").children("div").end().end().css("color","red");//end()终止前一个的操作
+//    $(".aa").nextAll().css("color","red");//选中aa后面所有的元素，不包括自身
+//    $(".aa").nextAll().addBack().css("color","red");//选中aa后面所有的元素,加回自身
+//    $("ul").closest("li").css("color","red");//找上一级
+//    $(".div1").children("div").css("color","red");//找到亲子代就结束
+//    $(".div1").find("div").css("color","red");//一直找
+//    $(".cc").nextUntil(".bb").css("color","red");//从cc到bb，不包括自身
+//    $(".cc").parent().css("color","red");//只找到最亲的父级
+//    $(".cc").parents().css("color","red");//只找到所有的父级
+//    $(".cc").parentsUntil("div").css("color","red");//只找到它之前的，不包含自己
+
+
+</script>
+</body>
+</html>

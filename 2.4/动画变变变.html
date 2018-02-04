@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.3.1.js"></script>
+    <style>
+        #box{
+            height: 200px;
+            width: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<button id="test">测试</button>
+<button id="stop">stop</button>
+<button id="stoptrue">stop(true)</button>
+<button id="stopfalse">stop(false)</button>
+<button id="stoptf">stop(true,false)</button>
+<button id="stoptt">stop(true,true)</button>
+<button id="stopff">stop(false,false)</button>
+<button id="stopft">stop(false,true)</button>
+<div id="box"></div>
+<script>
+    $("#test").click(function () {
+        $("#box").animate({
+           height:'1000'
+        },2000)
+        $("#box").animate({
+            width:'1000'
+        },2000)
+        $("#box").animate({
+            height:'200'
+        },2000)
+        $("#box").animate({
+            width:'200'
+        },2000)
+    })
+    $("#stop").click(function (){
+        $("#box").stop();
+    })
+    $("#stoptrue").click(function (){
+        $("#box").stop(true);
+    })
+    $("#stopfalse").click(function (){
+        $("#box").stop(false);
+    })
+    $("#stoptt").click(function (){
+        $("#box").stop(true,true);
+    })
+    $("#stoptf").click(function (){
+        $("#box").stop(true,false);
+    })
+    $("#stopff").click(function (){
+        $("#box").stop(false,false);
+    })
+    $("#stopft").click(function (){
+        $("#box").stop(false,true);
+    })
+
+</script>
+</body>
+</html>
