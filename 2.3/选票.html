@@ -151,7 +151,7 @@
         .empty{
             background-color: white;!important;
         }
-        .selected{
+        #selected{
             background-color: cornflowerblue;!important;
         }
     </style>
@@ -174,7 +174,7 @@
     <div class="seat-bar">
         <ul>
             <li>
-                <span class="seat"></span>
+                <span class="seat selected"></span>
                 <span class="seat"></span>
                 <span class="seat"></span>
                 <span class="seat"></span>
@@ -290,7 +290,6 @@
         </ul>
     </div>
     <div class="foot">
-
     </div>
     <div class="bot">
         <div class="b-left">
@@ -302,12 +301,21 @@
     </div>
 </div>
 <script>
-    $seat = $(".seat");
-    for(var i=0;i<$seat.length;i++){
-        if(i%4==0){
-            $seat.eq(i).css("background-color","cornflowerblue");
+        var oSeat = document.getElementsByClassName("seat");
+        for(var i=0;i<oSeat.length;i++){
+            var a = Math.random();
+            var b = Math.floor(a * i);
+            console.log(b);
+            oSeat[b].style.background = "blue";
         }
-    }
+
+
+//    $seat = $(".seat");
+//    for(var i=0;i<$seat.length;i++){
+//        if(i%4==0){
+//            $seat.eq(i).css("background-color","cornflowerblue");
+//        }
+//    }
 
 //    for(var j=0;j<$seat.length;j++) {
 //        if (j % 4 == 0) {
