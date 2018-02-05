@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.3.1.js"></script>
+    <style>
+        select{
+            width: 100px;
+            height: 200px;
+        }
+        label{
+            display: inline-block;
+            background-color: #b1b1b1;
+            margin-top: 5px;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+<select id="left" multiple="multiple">
+    <option id="one">第一项</option>
+    <option>第二项</option>
+    <option>第三项</option>
+    <option>第四项</option>
+    <option>第五项</option>
+    <option>第六项</option>
+</select>
+<select id="right" multiple="multiple">
+    <option>第七项</option>
+</select>
+<br>
+<label id="1">选中添加到右边>></label>
+<label id="2">选中添加到左边<<</label><br>
+<label id="3">全选添加到右边>></label>
+<label id="4">全选添加到左边<<</label>
+<script>
+//    var optionList = [];
+    $("#1").click(function () {
+        $("option:selected").appendTo($("#right"));
+    })
+    $("#2").click(function () {
+        $("option:selected").appendTo($("#left"));
+    })
+    $("#3").click(function () {
+        $("option").appendTo($("#right"));
+    })
+    $("#4").click(function () {
+        $("option").appendTo($("#left"));
+    })
+//    $("optiond").on("dblclick","option",function () {
+//        $("option:selected").appendTo($("#right"));
+//    })
+    $("#left option").dblclick(function () {
+        $("option:selected").appendTo($("#right"));
+    })
+    $("#right").on("dblclick","option",function () {
+        $("option:selected").appendTo($("#left"));
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.3.1.js"></script>
+    <style>
+        textarea{
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+<button id="big">放大</button>
+<button id="small">缩小</button>
+<textarea id="text">
+    哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+</textarea>
+<script>
+    $("#big").click(function () {
+        $("#text").animate({
+            height: "+=50"
+        })
+    })
+    $("#small").click(function () {
+        $("#text").animate({
+            height: "-=50"
+        })
+    })
+</script>
+</body>
+</html>

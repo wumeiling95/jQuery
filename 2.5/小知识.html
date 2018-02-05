@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" value="name" id="inp">
+<button id="btn">anniu</button>
+<script>
+    var oInp = document.getElementById("inp");
+    var oBtn = document.getElementById("btn");
+    oBtn.onclick = function () {
+        console.log(oInp.value);
+        console.log(oInp.defaultValue);//输出默认的value值
+    }
+</script>
+</body>
+</html>

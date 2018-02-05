@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.3.1.js"></script>
+    <style>
+        input{
+            outline:none;
+        }
+        textarea{
+            outline:none;
+        }
+        .active{
+            background-color:rgba(30,320,300,0.35);
+            /*opacity: 0.2;*/
+            outline: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <fieldset>
+        <legend>个人信息</legend>
+        <div>
+            <label>名称：</label>
+            <input type="text" class="inp1" value="名称">
+        </div>
+        <div>
+            <label>密码：</label>
+            <input type="text" class="inp2" value="密码">
+        </div>
+        <div>
+            <label>详细信息：</label>
+            <textarea class="inp3">详细信息</textarea>
+        </div>
+    </fieldset>
+</form>
+<script>
+//    $(".inp1").focus(function () {
+//        $(".inp1").addClass("active");
+//    }).blur(function () {
+//        $(".inp1").removeClass("active");
+//    })
+//    $(".inp2").focus(function () {
+//        $(".inp2").addClass("active");
+//    }).blur(function () {
+//        $(".inp2").removeClass("active");
+//    })
+//    $("textarea").focus(function () {
+//        $("textarea").addClass("active");
+//    }).blur(function () {
+//        $("textarea").removeClass("active");
+//    })
+
+
+$(function(){
+    $(":input").focus(function(){
+        $(this).addClass("active");
+        if($(this).val() == this.defaultValue){
+            $(this).val("");
+        }
+    }).blur(function(){
+        $(this).removeClass("active").val(this.value==""?this.defaultValue:$(this).val());
+    });
+})
+
+//    var t;
+//    $("input").focus(function () {
+//        $(this).addClass("active");
+//        t=$(this).attr("value");
+//        $(this).attr("value","");
+//    }).blur(function () {
+//        $(this).removeClass("active");
+//        $(this).attr("value",""+t+"");
+//        if ($(this).val("")){
+//            $(this).attr("value",""+t+"");
+//        }
+//    })
+//    $("textarea").focus(function () {
+//        $(this).addClass("active");
+//        $(this).val("");
+//    }).blur(function () {
+//        $(this).removeClass("active");
+//        $(this).val("详细信息");
+//    })
+</script>
+</body>
+</html>

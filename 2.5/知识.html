@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.3.1.js"></script>
+    <style>
+        .div1{
+            width: 600px;
+            height: 600px;
+            background-color: blue;
+        }
+        .div2{
+            width: 400px;
+            height: 400px;
+            background-color: red;
+        }
+        .div3{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <input type="checkbox">1
+    <input type="checkbox">2
+    <input type="checkbox">3
+    <div class="div1">
+        <div class="div2">
+            <div class="div3"></div>
+        </div>
+    </div>
+</div>
+<script>
+    $(":input").click(function () {
+        
+    })
+    $(":input").trigger("click");  //不用点击，自动执行点击行为
+    $(":input").triggerHandler("click");  //阻止冒泡，不支持浏览器的默认行为
+    
+    $("#box").load("jquery-3.3.1.js",function () {
+
+    });  //引入插件,有回调函数
+    
+    $(document).ready(function () {//可以简写，加载完dom结构后执行该部分
+
+    })
+
+    $.extend(person1,person2);//将很对对象合到一起,后面的对象合到前面的对象里面
+    $.extend(person1,person2,person3);//将很对对象合到一起,后面的对象合到前面的对象里面
+
+    $("#inp").focus(function () {//获取焦点时
+        console.log(1);
+    })
+    $("#inp").blur(function () {//失去焦点时
+        console.log(1);
+    })
+</script>
+</body>
+</html>
